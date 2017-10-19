@@ -29,8 +29,8 @@ export default reduxForm({
     form: 'new-media-form',
     onSubmit: (data, dispatch) => dispatch((dispatch, getState) => {
         encodeFile(data).then(file => {
-            Media().action.post(file)(dispatch, getState).then(data => {
-                Media().action.list({})(dispatch, getState);
+            Media().action.create(file)(dispatch, getState).then(data => {
+                Media().action.collection.get({})(dispatch, getState);
                 dispatch(Media().action.select(data.results.id));
             });
         });

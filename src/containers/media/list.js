@@ -8,7 +8,7 @@ import MediaList from "../../components/media/list";
 
 export default connect(
     state => ({
-        media: Media().selector.list(state, {})
+        media: Media().select.all(() => state, {})
     }),
     (dispatch, getState) => ({
 

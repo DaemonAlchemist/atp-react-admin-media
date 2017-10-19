@@ -23,9 +23,9 @@ export default {
                                 label: <span><i className="fa fa-picture-o"></i> Files</span>,
                                 sortOrder: 0,
                                 onClick: dispatch => {
-                                    dispatch(Media().action.list({}));
+                                    dispatch(Media().action.collection.get({}));
                                     dispatch(addTab({
-                                        title: <span><i className="fa fa-pictur-o" /> Files</span>,
+                                        title: <span><i className="fa fa-picture-o" /> Files</span>,
                                         id: () => 'media-files',
                                         controller: () => <MediaList/>
                                     }));

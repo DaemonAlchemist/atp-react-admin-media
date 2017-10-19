@@ -6,7 +6,7 @@ import {entityBoilerplate} from "atp-entity";
 import {o} from "atp-sugar";
 
 //Entity types
-export const mediaType = 'mediaMedia';
+export const mediaType = 'mediaFile';
 export const mediaName = 'media';
 
 //Action types

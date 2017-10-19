@@ -15,7 +15,7 @@ export default props =>
         <Col xs={12} style={{paddingTop: "15px"}}>
             <Row>
                 {props.media.map(item =>
-                    <Col xs={6} sm={4} md={2}>
+                    <Col key={item.id} xs={6} sm={4} md={2}>
                         <Panel>
                             <img src={restUrl("media/" + item.id + "/download?width=300&height=300&format=png")} className="img-responsive"/>
                             <span>{item.name}</span>
