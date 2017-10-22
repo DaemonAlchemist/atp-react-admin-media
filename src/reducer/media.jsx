@@ -2,7 +2,7 @@
  * Created by Andy on 4/19/2017.
  */
 
-import {entityBoilerplate} from "atp-entity";
+import {entityBoilerplate} from "atp-redux-entity";
 import {o} from "atp-sugar";
 
 //Entity types

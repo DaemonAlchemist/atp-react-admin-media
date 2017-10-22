@@ -5,7 +5,7 @@
 import React from "react";
 import {Row, Col, Panel} from "react-bootstrap";
 import NewMediaForm from "../../containers/media/form/create";
-import {restUrl} from "atp-rest";
+import {restUrl} from "atp-rest-client";
 
 export default props =>
     <Row>
