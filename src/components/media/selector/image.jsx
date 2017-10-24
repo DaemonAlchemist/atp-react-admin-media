@@ -14,6 +14,6 @@ export default props =>
             </Button>
         </Col>
         <Col xs={12} sm={6} md={9}>
-            <NewMediaForm onUpload={() => {alert('Not implemented yet. :(');}} />
+            <NewMediaForm onUpload={data => props.onSave(data.results.id)} />
         </Col>
     </Row>;
