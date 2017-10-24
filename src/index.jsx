@@ -8,6 +8,14 @@ import {Row} from "react-bootstrap";
 import MediaList from "./containers/media/list";
 import {addTab} from "atp-ui";
 import {Media} from "./reducer/media";
+import NewMediaForm from "./containers/media/form/create";
+import Image from "./containers/media/selector/image";
+
+const MediaSelector = {
+    Image
+};
+
+export {NewMediaForm, MediaSelector};
 
 export default {
     reducers: {},

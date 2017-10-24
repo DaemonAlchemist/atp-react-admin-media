@@ -5,32 +5,11 @@
 import React from "react";
 import {Button, InputGroup} from "react-bootstrap";
 import {Field} from "redux-form";
-
-const adaptFileEventToValue = delegate =>
-    e => delegate(e.target.files[0])
-
-const FileInput = ({
-    input: {
-        value: omitValue,
-        onChange,
-        onBlur,
-        ...inputProps,
-    },
-    meta: omitMeta,
-    ...props,
-}) =>
-    <input
-        className="form-control"
-        onChange={adaptFileEventToValue(onChange)}
-        onBlur={adaptFileEventToValue(onBlur)}
-        type="file"
-        {...inputProps}
-        {...props}
-    />;
+import {FileInput} from 'atp-ui';
 
 export default props =>
     <form onSubmit={props.handleSubmit}>
-        <InputGroup>
+        <InputGroup bsSize="lg">
             <Field name="file" placeholder="Upload file" component={FileInput} className="form-control"/>
             <InputGroup.Button>
                 <Button bsStyle="primary" type="submit"><i className="fa fa-upload"/> Upload</Button>

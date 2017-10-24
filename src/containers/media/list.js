@@ -13,6 +13,9 @@ export default connect(
         loginToken: getLoginToken(() => state)
     }),
     (dispatch, getState) => ({
-
+        onUpload: data => {
+            Media().action.collection.get({columns: ['id', 'name']})(dispatch, getState);
+            dispatch(Media().action.select(data.results.id));
+        }
     })
 )(MediaList);
