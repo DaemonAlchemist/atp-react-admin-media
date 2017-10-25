@@ -8,11 +8,25 @@ import {Field} from "redux-form";
 import {FileInput} from 'atp-ui';
 
 export default props =>
-    <form onSubmit={props.handleSubmit}>
-        <InputGroup bsSize="lg">
-            <Field name="file" placeholder="Upload file" component={FileInput} className="form-control"/>
-            <InputGroup.Button>
-                <Button bsStyle="primary" type="submit"><i className="fa fa-upload"/> Upload</Button>
-            </InputGroup.Button>
-        </InputGroup>
+    <form
+        onChange={() => setTimeout(props.handleSubmit, 0)}
+        style={{display: "inline", position: "relative"}}
+    >
+        <Field
+            name="file"
+            placeholder="Upload file"
+            component={FileInput}
+            style={{
+                position: "absolute",
+                top: "-9px",
+                left: 0,
+                display: "block",
+                height: "35px",
+                width: "84px",
+                opacity: 0,
+                zIndex: 999
+            }}/>
+        <Button bsStyle="primary" bsSize="lg" onClick={() => {}}>
+            <i className="fa fa-upload"/> Upload
+        </Button>
     </form>;
