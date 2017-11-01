@@ -10,7 +10,7 @@ import {restUrl} from "atp-rest-client";
 export default props =>
     <Row>
         <Col xs={12} className="text-right">
-            <NewMediaForm onUpload={props.onUpload} />
+            <NewMediaForm showText={true} onUpload={props.onUpload} />
         </Col>
         <Col xs={12} style={{paddingTop: "15px"}}>
             <Row>

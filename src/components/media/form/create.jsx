@@ -22,11 +22,11 @@ export default props =>
                 left: 0,
                 display: "block",
                 height: "35px",
-                width: "84px",
+                width: props.showText ? "84px" : "20px",
                 opacity: 0,
                 zIndex: 999
             }}/>
-        <Button bsStyle="primary" bsSize="lg" onClick={() => {}}>
-            <i className="fa fa-upload"/> Upload
+        <Button bsStyle="primary" bsSize={props.bsSize || "large"} onClick={() => {}}>
+            <i className="fa fa-upload fa-fw" title="Upload"/> {props.showText ? "Upload" : ""}
         </Button>
     </form>;
