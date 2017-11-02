@@ -9,13 +9,14 @@ import MediaList from "./containers/media/list";
 import {addTab} from "atp-ui";
 import {Media} from "./reducer/media";
 import NewMediaForm from "./containers/media/form/create";
-import Image from "./containers/media/selector/image";
+import ImageSelector from "./containers/media/selector/image";
+import Image from "./containers/media/image";
 
 const MediaSelector = {
-    Image
+    Image: ImageSelector
 };
 
-export {NewMediaForm, MediaSelector};
+export {NewMediaForm, MediaSelector, Image};
 
 export default {
     reducers: {},

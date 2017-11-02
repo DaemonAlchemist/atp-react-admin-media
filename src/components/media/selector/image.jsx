@@ -2,7 +2,7 @@
 import React from 'react';
 import {Row, Col, InputGroup, Button, Panel} from 'react-bootstrap';
 import NewMediaForm from '../../../containers/media/form/create';
-import {restUrl} from "atp-rest-client";
+import Image from "../../../containers/media/image";
 
 export default ({title, mediaId, image, loginToken, onSave}) =>
     <Panel header={<span>
@@ -18,7 +18,7 @@ export default ({title, mediaId, image, loginToken, onSave}) =>
             <Col xs={12}>
                 {mediaId && image &&
                 <div>
-                    <img src={restUrl("media/" + image.id + "/download?width=300&height=300&format=png&loginToken=" + loginToken)} className="img-responsive"/>
+                    <Image mediaId={image.id} width={300} height={300} />
                     <span>{image.name}</span>
                 </div>
                 }
