@@ -3,11 +3,10 @@
  */
 
 import React from "react";
-import {Row} from "react-bootstrap";
+import {Route} from 'react-router';
+import {Link} from 'atp-react-tab-router';
 
 import MediaList from "./containers/media/list";
-import {addTab} from "atp-ui";
-import {Media} from "./reducer/media";
 import NewMediaForm from "./containers/media/form/create";
 import ImageSelector from "./containers/media/selector/image";
 import Image from "./containers/media/image";
@@ -20,6 +19,9 @@ export {NewMediaForm, MediaSelector, Image};
 
 export default {
     reducers: {},
+    routes: [
+        <Route path="/media" exact render={() => <MediaList />} />
+    ],
     init: {
         ui: {
             menus: {
@@ -29,16 +31,8 @@ export default {
                         sortOrder: 0,
                         children: {
                             dashboard: {
-                                label: <span><i className="fa fa-picture-o"></i> Files</span>,
-                                sortOrder: 0,
-                                onClick: dispatch => {
-                                    dispatch(Media().action.collection.get({columns: ['id', 'name']}));
-                                    dispatch(addTab({
-                                        title: <span><i className="fa fa-picture-o" /> Files</span>,
-                                        id: () => 'media-files',
-                                        controller: () => <MediaList/>
-                                    }));
-                                }
+                                label: <Link to="/media" label="Files" target="new"><i className="fa fa-picture-o"></i> Files</Link>,
+                                sortOrder: 0
                             }
                         }
                     }
