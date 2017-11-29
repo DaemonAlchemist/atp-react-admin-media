@@ -37,15 +37,17 @@
     "mocha": "^4.0.1"
   },
   "dependencies": {
+    "atp-react-tab-router": "^0.3.0",
     "atp-redux-entity": "^0.2.1",
     "atp-rest-client": "^0.1.1",
-    "atp-sugar": "^0.8.1",
-    "atp-uac": "^0.2.0",
-    "atp-ui": "^0.2.1",
-    "react": "^16.0.0",
+    "atp-sugar": "^0.8.3",
+    "atp-uac": "^0.3.0",
+    "atp-ui": "^0.3.1",
+    "react": "^16.2.0",
     "react-bootstrap": "^0.31.5",
     "react-lifecycle-component": "^3.0.0",
     "react-redux": "^5.0.6",
-    "redux-form": "^7.1.2"
+    "react-router": "^4.2.0",
+    "redux-form": "^7.2.0"
   }
 }
