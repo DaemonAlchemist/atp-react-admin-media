@@ -4,13 +4,12 @@
 
 import {connect} from 'react-redux';
 import Image from "../../components/media/image";
-import {getLoginToken} from 'atp-uac';
+import {Media} from "../../reducer/media";
 
 export default connect(
     (state, props) => ({
-        imageId: props.mediaId || null,
+        image: Media().select.one(() => state, props.mediaId),
         width: props.width || false,
         height: props.height || false,
-        loginToken: getLoginToken(() => state)
     })
 )(Image);
