@@ -8,8 +8,8 @@ import {Link} from 'atp-react-tab-router';
 
 import MediaList from "./containers/media/list";
 import NewMediaForm from "./containers/media/form/create";
-import ImageSelector from "./containers/media/selector/image";
-import Image from "./containers/media/image";
+import ImageSelector from "./containers/image/selector";
+import Image from "./containers/image";
 
 const MediaSelector = {
     Image: ImageSelector

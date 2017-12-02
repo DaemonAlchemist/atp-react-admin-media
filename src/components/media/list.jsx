@@ -5,7 +5,7 @@
 import React from "react";
 import {Row, Col, Panel} from "react-bootstrap";
 import NewMediaForm from "../../containers/media/form/create";
-import Image from "../../containers/media/image";
+import Image from "../../containers/image";
 
 export default props =>
     <Row>
@@ -17,7 +17,7 @@ export default props =>
                 {props.media.map(item =>
                     <Col key={item.id} xs={6} sm={4} md={2}>
                         <Panel>
-                            <Image mediaId={item.id} width={300} height={300} />
+                            <Image imageId={item.id} width={300} height={300} />
                             <span>{item.name}</span>
                         </Panel>
                     </Col>

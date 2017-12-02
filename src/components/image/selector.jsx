@@ -1,10 +1,10 @@
 
 import React from 'react';
 import {Row, Col, InputGroup, Button, Panel} from 'react-bootstrap';
-import NewMediaForm from '../../../containers/media/form/create';
-import Image from "../../../containers/media/image";
+import NewMediaForm from '../../containers/media/form/create';
+import Image from "../../containers/image";
 
-export default ({title, mediaId, image, loginToken, onSave}) =>
+export default ({title, imageId, image, loginToken, onSave}) =>
     <Panel header={<span>
         <i className="fa fa-picture-o"></i> {title}
         <div style={{float: "right"}}>
@@ -16,13 +16,13 @@ export default ({title, mediaId, image, loginToken, onSave}) =>
     </span>}>
         <Row>
             <Col xs={12}>
-                {mediaId && image &&
+                {imageId && image &&
                 <div>
-                    <Image mediaId={image.id} width={300} height={300} />
+                    <Image imageId={image.id} width={300} height={300} />
                     <span>{image.name}</span>
                 </div>
                 }
-                {!mediaId && <i className="fa fa-picture-o fa-5x"></i>}
+                {!imageId && <i className="fa fa-picture-o fa-5x"></i>}
             </Col>
         </Row>
     </Panel>

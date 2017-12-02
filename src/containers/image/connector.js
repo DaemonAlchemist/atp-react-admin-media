@@ -4,18 +4,17 @@
 
 import {connect} from 'react-redux';
 import {connectWithLifecycle} from "react-lifecycle-component";
-import ImageSelector from '../../../components/media/selector/image';
-import {Media} from "../../../reducer/media";
+import {Media} from "../../reducer/media";
 
 const imageLoader = (props, dispatch) => () => {
-    if(props.mediaId && !props.image) {
-        dispatch(Media().action.fetch(props.mediaId));
+    if(props.imageId && !props.image) {
+        dispatch(Media().action.fetch(props.imageId));
     }
 };
 
-export default connect(
+export default component => connect(
     (state, props) => ({
-        image: props.mediaId ? Media().select.one(() => state, props.mediaId) : null,
+        image: props.imageId ? Media().select.one(() => state, props.imageId) : null,
     })
 )(connectWithLifecycle(
     null,
@@ -23,4 +22,4 @@ export default connect(
         componentDidMount: imageLoader(props, dispatch),
         componentDidUpdate: imageLoader(props, dispatch),
     })
-)(ImageSelector));
+)(component));
