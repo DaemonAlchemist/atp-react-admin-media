@@ -12,10 +12,10 @@ export default connectWithLifecycle(
     }),
     (dispatch, getState) => ({
         componentDidMount: () => {
-            dispatch(Media().action.collection.get({columns: ['id', 'name', 'url']}));
+            dispatch(Media().action.collection.get({}));
         },
         onUpload: data => {
-            Media().action.collection.get({columns: ['id', 'name']})(dispatch, getState);
+            Media().action.collection.get({})(dispatch, getState);
             dispatch(Media().action.select(data.results.id));
         }
     })

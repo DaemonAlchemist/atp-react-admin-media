@@ -18,7 +18,7 @@ export default props =>
                     <Col key={item.id} xs={6} sm={4} md={2}>
                         <Panel>
                             <Image imageId={item.id} width={300} height={300} />
-                            <span>{item.name}</span>
+                            <span>{item.fileName}.{item.fileExtension}</span>
                         </Panel>
                     </Col>
                 )}
