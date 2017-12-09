@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default ({image, width, height}) =>
+export default ({fileName, width, height, host}) =>
     image
         ? <img
-            src={image.url}
+            src={`http://${host}/${fileName}`}
             className="img-responsive"
             width={width}
             height={height}
