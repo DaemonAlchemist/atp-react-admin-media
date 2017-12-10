@@ -15,6 +15,8 @@ const imageLoader = (props, dispatch) => () => {
 export default component => connect(
     (state, props) => ({
         image: props.imageId ? Media().select.one(() => state, props.imageId) : null,
+        width: typeof props.width !== 'undefined' ? props.width : 300,
+        height: typeof props.height !== 'undefined' ? props.height : 300
     })
 )(connectWithLifecycle(
     null,

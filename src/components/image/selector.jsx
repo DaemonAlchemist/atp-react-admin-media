@@ -4,7 +4,7 @@ import {Row, Col, InputGroup, Button, Panel} from 'react-bootstrap';
 import NewMediaForm from '../../containers/media/form/create';
 import Image from "../../containers/image";
 
-export default ({title, imageId, image, loginToken, onSave}) =>
+export default ({title, imageId, image, loginToken, onSave, width, height}) =>
     <Panel header={<span>
         <i className="fa fa-picture-o"></i> {title}
         <div style={{float: "right"}}>
@@ -18,7 +18,7 @@ export default ({title, imageId, image, loginToken, onSave}) =>
             <Col xs={12}>
                 {imageId && image &&
                 <div>
-                    <Image imageId={image.id} width={300} height={300} />
+                    <Image imageId={image.id} width={width} height={height} />
                     <span>{image.name}</span>
                 </div>
                 }
