@@ -20,7 +20,7 @@ export {NewMediaForm, MediaSelector, Image};
 export default {
     reducers: {},
     routes: [
-        <Route path="/media" exact render={() => <MediaList />} />
+        <Route path="/media" key="/media" exact render={() => <MediaList />} />
     ],
     init: {
         ui: {
@@ -32,6 +32,7 @@ export default {
                         children: {
                             dashboard: {
                                 label: <Link to="/media" label="Files" target="new"><i className="fa fa-picture-o"></i> Files</Link>,
+                                noAnchor: true,
                                 sortOrder: 0
                             }
                         }
