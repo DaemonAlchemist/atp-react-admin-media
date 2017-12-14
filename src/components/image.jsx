@@ -5,7 +5,7 @@ export default ({image, resize, width, height, host}) =>
         ? <img
             src={`http://${host}/${image.fileName}${resize}.${image.fileExtension}`}
             className="img-responsive"
-            width={width}
-            height={height}
+            width={width ? width : undefined}
+            height={height ? height : undefined}
           />
         : <i className="fa fa-picture-o fa-5x" />;
