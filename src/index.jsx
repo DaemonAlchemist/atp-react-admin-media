@@ -3,6 +3,7 @@
  */
 
 import React from "react";
+import {combineReducers} from 'redux';
 import {Route} from 'react-router';
 import {Link} from 'atp-react-tab-router';
 
@@ -11,14 +12,20 @@ import NewMediaForm from "./containers/media/form/create";
 import ImageSelector from "./containers/image/selector";
 import Image from "./containers/image";
 
+import uploads, {uploadStart, uploadComplete, isUploading} from "./reducer/uploads";
+
 const MediaSelector = {
     Image: ImageSelector
 };
 
-export {NewMediaForm, MediaSelector, Image};
+export {NewMediaForm, MediaSelector, Image, uploadStart, uploadComplete, isUploading};
 
 export default {
-    reducers: {},
+    reducers: {
+        media: combineReducers({
+            uploads
+        })
+    },
     routes: [
         <Route path="/media" key="/media" exact render={() => <MediaList />} />
     ],

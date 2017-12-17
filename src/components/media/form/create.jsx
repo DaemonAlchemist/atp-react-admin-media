@@ -26,7 +26,16 @@ export default props =>
                 opacity: 0,
                 zIndex: 999
             }}/>
-        <Button bsStyle="primary" bsSize={props.bsSize || "large"} onClick={() => {}}>
-            <i className="fa fa-upload fa-fw" title="Upload"/> {props.showText ? "Upload" : ""}
+        <Button
+            bsStyle="primary"
+            bsSize={props.bsSize || "large"}
+            onClick={() => {}}
+            enabled={!props.isUploading}
+        >
+            <i
+                className={props.isUploading ? "fa fa-spinner fa-spin" : "fa fa-upload fa-fw"}
+                title="Upload"
+            />
+            {props.showText ? "Upload" : ""}
         </Button>
     </form>;
