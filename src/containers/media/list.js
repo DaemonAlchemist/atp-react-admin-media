@@ -1,6 +1,3 @@
-/**
- * Created by Andy on 4/22/2017.
- */
 
 import {Media} from "../../reducer/media";
 import MediaList from "../../components/media/list";

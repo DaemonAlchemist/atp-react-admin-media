@@ -1,4 +1,5 @@
 import React from 'react';
+import {Icon} from 'react-font-awesome-5';
 
 export default ({image, resize, width, height, host}) =>
     image
@@ -8,4 +9,4 @@ export default ({image, resize, width, height, host}) =>
             width={width ? width : undefined}
             height={height ? height : undefined}
           />
-        : <i className="fa fa-picture-o fa-5x" />;
+        : <Icon.Image size="5x" />;

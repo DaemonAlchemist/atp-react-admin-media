@@ -1,6 +1,3 @@
-/**
- * Created by Andy on 10/24/2017.
- */
 
 import {connect} from 'react-redux';
 import {connectWithLifecycle} from "react-lifecycle-component";

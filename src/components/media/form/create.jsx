@@ -1,11 +1,9 @@
-/**
- * Created by Andy on 4/22/2017.
- */
 
 import React from "react";
 import {Button, InputGroup} from "react-bootstrap";
 import {Field} from "redux-form";
 import {FileInput} from 'atp-ui';
+import {Icon} from 'react-font-awesome-5';
 
 export default props =>
     <form
@@ -32,10 +30,10 @@ export default props =>
             onClick={() => {}}
             enabled={!props.isUploading}
         >
-            <i
-                className={props.isUploading ? "fa fa-spinner fa-spin" : "fa fa-upload fa-fw"}
-                title="Upload"
-            />
+            {props.isUploading
+                ? <Icon.Spinner spin fixedWidth />
+                : <Icon.Upload fixedWidth />
+            }
             {props.showText ? "Upload" : ""}
         </Button>
     </form>;

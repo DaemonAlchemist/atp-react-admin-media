@@ -1,6 +1,3 @@
-/**
- * Created by Andy on 3/18/2017.
- */
 
 import React from "react";
 import {combineReducers} from 'redux';
@@ -13,6 +10,7 @@ import ImageSelector from "./containers/image/selector";
 import Image from "./containers/image";
 
 import uploads, {uploadStart, uploadComplete, isUploading} from "./reducer/uploads";
+import {Icon} from 'react-font-awesome-5';
 
 const MediaSelector = {
     Image: ImageSelector
@@ -34,11 +32,11 @@ export default {
             menus: {
                 main: {
                     media: {
-                        label: <span><i className="fa fa-picture-o"></i> Media</span>,
+                        label: <span><Icon.Image /> Media</span>,
                         sortOrder: 0,
                         children: {
                             dashboard: {
-                                label: <Link to="/media" label="Files" target="new"><i className="fa fa-picture-o"></i> Files</Link>,
+                                label: <Link to="/media" label="Files" target="new"><Icon.Image /> Files</Link>,
                                 noAnchor: true,
                                 sortOrder: 0
                             }

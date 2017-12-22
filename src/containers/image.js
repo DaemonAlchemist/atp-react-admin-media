@@ -1,6 +1,3 @@
-/**
- * Created by Andrea on 11/2/2017.
- */
 
 import {connect} from 'react-redux';
 import Image from "../components/image";

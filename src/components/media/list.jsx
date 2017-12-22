@@ -1,6 +1,3 @@
-/**
- * Created by Andy on 4/22/2017.
- */
 
 import React from "react";
 import {Row, Col, Panel} from "react-bootstrap";

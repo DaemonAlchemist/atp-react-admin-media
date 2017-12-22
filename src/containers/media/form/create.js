@@ -1,6 +1,3 @@
-/**
- * Created by Andy on 4/22/2017.
- */
 
 import {connect} from 'react-redux';
 import {reduxForm} from "redux-form";
