@@ -36,7 +36,13 @@ export default {
                         sortOrder: 0,
                         children: {
                             dashboard: {
-                                label: <Link to="/media" label="Files" target="new"><Icon.Image /> Files</Link>,
+                                label: <Link
+                                    to="/media"
+                                    label={<span><Icon.Image /> Files</span>}
+                                    target="new"
+                                >
+                                    <Icon.Image /> Files
+                                </Link>,
                                 noAnchor: true,
                                 sortOrder: 0
                             }
