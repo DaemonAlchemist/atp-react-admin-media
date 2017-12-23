@@ -1,6 +1,6 @@
 {
   "name": "atp-media",
-  "version": "0.7.5",
+  "version": "0.7.6",
   "description": "A media upload module.",
   "main": "lib/index.js",
   "scripts": {
