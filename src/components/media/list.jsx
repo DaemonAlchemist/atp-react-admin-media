@@ -4,6 +4,10 @@ import {Row, Col, Panel} from "react-bootstrap";
 import NewMediaForm from "../../containers/media/form/create";
 import Image from "../../containers/image";
 import Masonry from 'react-masonry-component';
+import LinesEllipsis from 'react-lines-ellipsis';
+import responsiveHOC from 'react-lines-ellipsis/lib/responsiveHOC';
+
+const ResponsiveEllipsis = responsiveHOC()(LinesEllipsis);
 
 export default props =>
     <Row>
@@ -15,7 +19,10 @@ export default props =>
                 <Masonry>
                     {props.media.map(item =>
                         <Col key={item.id} xs={6} sm={3} md={2}>
-                            <Panel footer={<span style={{overflow: "ellipsis"}}>{item.fileName}.{item.fileExtension}</span>}>
+                            <Panel footer={<ResponsiveEllipsis
+                                text={item.fileName + "." + item.fileExtension}
+                                maxLine={2}
+                            />}>
                                 <Image imageId={item.id} width={300} height={300} />
                             </Panel>
                         </Col>
