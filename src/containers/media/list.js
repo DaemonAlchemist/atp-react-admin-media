@@ -14,6 +14,7 @@ export default connectWithLifecycle(
         onUpload: data => {
             Media().action.collection.get({})(dispatch, getState);
             dispatch(Media().action.select(data.results.id));
-        }
+        },
+        onMediaDelete: id => () => {dispatch(Media().action.delete(id));}
     })
 )(MediaList);
