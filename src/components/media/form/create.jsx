@@ -25,15 +25,16 @@ export default props =>
                 zIndex: 999
             }}/>
         <Button
-            bsStyle="primary"
-            bsSize={props.bsSize || "large"}
+            bsStyle="link"
+            bsSize={props.bsSize || "regular"}
             onClick={() => {}}
             enabled={!props.isUploading}
+            style={{marginTop: "-4px"}}
         >
             {props.isUploading
                 ? <Icon.Spinner spin fixedWidth />
                 : <Icon.Upload fixedWidth />
             }
-            {props.showText ? "Upload" : ""}
+            {props.showText ? " Upload" : ""}
         </Button>
     </form>;

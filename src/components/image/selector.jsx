@@ -10,10 +10,10 @@ export default ({title, imageId, image, loginToken, onSave, width, height}) =>
         <Panel.Heading>
             <Icon.Image /> {title}
             <div style={{float: "right"}}>
-                <Button bsStyle="primary" bsSize="xsmall" type="submit" onClick={() => {alert("Not implemented yet. :(");}}>
+                <Button bsStyle="link" type="submit" style={{marginTop: "-4px"}} onClick={() => {alert("Not implemented yet. :(");}}>
                     <Icon.Search fixedWidth />
                 </Button>
-                <NewMediaForm bsSize="xsmall" showText={false} onUpload={data => onSave(data.results.id)} />
+                <NewMediaForm showText={false} onUpload={data => onSave(data.results.id)} />
             </div>
         </Panel.Heading>
         <Panel.Body>

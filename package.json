@@ -33,8 +33,8 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
     "chai": "^4.1.2",
-    "dependency-check": "^3.0.0",
-    "mocha": "^5.0.0"
+    "dependency-check": "^3.1.0",
+    "mocha": "^5.0.4"
   },
   "dependencies": {
     "atp-config": "^0.3.5",
@@ -42,16 +42,16 @@
     "atp-react-tab-router": "^0.3.4",
     "atp-redux-entity": "^0.2.5",
     "atp-sugar": "^0.8.4",
-    "atp-ui": "^0.8.2",
+    "atp-ui": "^0.8.3",
     "react": "^16.2.0",
     "react-bootstrap": "^0.32.1",
     "react-font-awesome-5": "^0.2.2",
     "react-lifecycle-component": "^3.0.0",
     "react-lines-ellipsis": "^0.10.2",
     "react-masonry-component": "^6.0.2",
-    "react-redux": "^5.0.6",
+    "react-redux": "^5.0.7",
     "react-router": "^4.2.0",
     "redux": "^3.7.2",
-    "redux-form": "^7.2.1"
+    "redux-form": "^7.3.0"
   }
 }
