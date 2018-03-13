@@ -13,18 +13,31 @@ const ResponsiveEllipsis = responsiveHOC()(LinesEllipsis);
 export default ({onUpload, media, onMediaDelete}) =>
     <Row>
         <Col xs={12} className="text-right">
-            <NewMediaForm showText={true} onUpload={onUpload} />
+            <NewMediaForm showText={true} bsSize="lg" onUpload={onUpload} />
         </Col>
         <Col xs={12} style={{paddingTop: "15px"}}>
             <Row>
                 <Masonry>
                     {media.map(item =>
                         <Col key={item.id} xs={6} sm={3} md={2}>
-                            <Panel footer={<ResponsiveEllipsis
-                                text={item.fileName + "." + item.fileExtension}
-                                maxLine={2}
-                            />}>
-                                <DeleteButton onClick={onMediaDelete(item.id)} />
+                            <Panel>
+                                <Panel.Heading>
+                                    <div style={{float: "right"}}>
+                                        <DeleteButton
+                                            id={`mediaDeleteBtn${item.id}`}
+                                            text="Delete"
+                                            message={`Are you sure you want to delete the image "${item.fileName}.${item.fileExtension}?"  This cannot be undone.`}
+                                            confirmText="Yes, delete it"
+                                            cancelText="No, keep it."
+                                            width="250px"
+                                            onClick={onMediaDelete(item.id)}
+                                        />
+                                    </div>
+                                    <ResponsiveEllipsis
+                                        text={item.fileName + "." + item.fileExtension}
+                                        maxLine={2}
+                                    />
+                                </Panel.Heading>
                                 <Image imageId={item.id} width={300} height={300} />
                             </Panel>
                         </Col>
