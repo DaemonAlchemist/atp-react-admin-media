@@ -7,7 +7,7 @@ import {DeleteButton} from 'atp-ui';
 
 export default ({media, onMediaDelete}) =>
     <Row>
-        <Col xs={8} xsOffset={2}>
+        <Col xs={12} md={10} mdOffset={1} lg={8} lgOffset={2} xl={6} xlOffset={3}>
             <Row>
                 <Col xs={12}>
                     <div style={{float: "right"}}>
@@ -28,10 +28,10 @@ export default ({media, onMediaDelete}) =>
                 </Col>
             </Row>
             <Row>
-                <Col xs={6}>
+                <Col xs={12} sm={6}>
                     <Image imageId={media.id} width={false} height={false} />
                 </Col>
-                <Col xs={6}>
+                <Col xs={12} sm={6}>
                     <RelatedFiles media={media} />
                 </Col>
             </Row>
