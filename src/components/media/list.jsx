@@ -8,6 +8,7 @@ import LinesEllipsis from 'react-lines-ellipsis';
 import responsiveHOC from 'react-lines-ellipsis/lib/responsiveHOC';
 import {DeleteButton, Paginator} from 'atp-ui';
 import {Icon} from 'react-font-awesome-5';
+import {MediaLink} from "../links";
 
 const ResponsiveEllipsis = responsiveHOC()(LinesEllipsis);
 
@@ -44,7 +45,9 @@ export default ({pagerId, onUpload, media, onMediaDelete}) =>
                                         maxLine={2}
                                     />
                                 </Panel.Heading>
-                                <Image imageId={item.id} width={300} height={300} />
+                                <MediaLink media={item}>
+                                    <Image imageId={item.id} width={300} height={300} />
+                                </MediaLink>
                             </Panel>
                         </Col>
                     )}

@@ -8,6 +8,7 @@ import MediaList from "./containers/media/list";
 import NewMediaForm from "./containers/media/form/create";
 import ImageSelector from "./containers/image/selector";
 import Image from "./containers/image";
+import FileDetails from "./containers/media/details";
 
 import uploads, {uploadStart, uploadComplete, isUploading} from "./reducer/uploads";
 import {Icon} from 'react-font-awesome-5';
@@ -25,7 +26,8 @@ export default {
         })
     },
     routes: [
-        <Route path="/media" key="/media" exact render={() => <MediaList />} />
+        <Route path="/media" key="/media" exact render={() => <MediaList />} />,
+        <Route path="/media/file/:fileId" key="/media/file/:fileId" exact render={({match}) => <FileDetails fileId={match.params.fileId} />} />,
     ],
     init: {
         ui: {

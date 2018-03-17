@@ -10,9 +10,10 @@ export const mediaName = 'media';
 export const SELECT_MEDIA = "atp-media/media/select";
 
 //REST selectors and actions
-export const Media = () => o(entityBoilerplate(mediaType, mediaName))
+export const Media = () => o(entityBoilerplate(mediaType, mediaName)).as(media => o(media)
     .merge({
         action: {
             select: mediaId => ({type: SELECT_MEDIA, mediaId})
-        }
-    }).raw;
+        },
+    }).raw
+);
