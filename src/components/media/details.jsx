@@ -1,11 +1,11 @@
 
 import React from 'react';
 import {Row, Col, Panel} from 'react-bootstrap';
-import Image from "../../containers/image";
 import RelatedFiles from "../../containers/media/related-files";
 import {DeleteButton} from 'atp-ui';
+import {MediaSelector} from "atp-media";
 
-export default ({media, onMediaDelete}) =>
+export default ({media, onMediaDelete, updateImage}) =>
     <Row>
         <Col xs={12} md={10} mdOffset={1} lg={8} lgOffset={2} xl={6} xlOffset={3}>
             <Row>
@@ -29,7 +29,7 @@ export default ({media, onMediaDelete}) =>
             </Row>
             <Row>
                 <Col xs={12} sm={6}>
-                    <Image imageId={media.id} width={false} height={false} />
+                    <MediaSelector.Image title="Image" imageId={media.id} onSave={updateImage} uploadOnly width={false} height={false} />
                 </Col>
                 <Col xs={12} sm={6}>
                     <RelatedFiles media={media} />

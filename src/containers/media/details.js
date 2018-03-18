@@ -12,6 +12,7 @@ export default connectWithLifecycle(
         componentDidMount: () => {
             dispatch(Media().action.fetch(props.fileId));
         },
-        onMediaDelete: () => {dispatch(Media().action.delete(props.fileId));}
+        onMediaDelete: () => {dispatch(Media().action.delete(props.fileId));},
+        updateImage: () => {}
     })
 )(FileDetails);

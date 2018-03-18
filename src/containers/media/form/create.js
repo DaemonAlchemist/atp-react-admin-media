@@ -21,7 +21,10 @@ const form = reduxForm({
     onSubmit: (data, dispatch, props) => dispatch((dispatch, getState) => {
         dispatch(uploadStart(props.id));
         encodeFile(data.file).then(file => {
-            Media().action.create(file)(dispatch, getState).then(([data]) => {
+            (props.imageId
+                ? Media().action.update(props.imageId, file)
+                : Media().action.create(file)
+            )(dispatch, getState).then(([data]) => {
                 dispatch(uploadComplete(props.id));
                 (props.onUpload || (() => {}))(data);
             }).catch(() => {

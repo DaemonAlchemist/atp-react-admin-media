@@ -5,15 +5,17 @@ import NewMediaForm from '../../containers/media/form/create';
 import Image from "../../containers/image";
 import {Icon} from 'react-font-awesome-5';
 
-export default ({title, imageId, image, loginToken, onSave, width, height}) =>
+export default ({title, imageId, image, loginToken, onSave, width, height, uploadOnly}) =>
     <Panel>
         <Panel.Heading>
             <Icon.Image /> {title}
             <div style={{float: "right"}}>
-                <Button bsStyle="link" type="submit" style={{marginTop: "-4px"}} onClick={() => {alert("Not implemented yet. :(");}}>
-                    <Icon.Search fixedWidth />
-                </Button>
-                <NewMediaForm showText={false} onUpload={data => onSave(data.results.id)} />
+                {!uploadOnly &&
+                    <Button bsStyle="link" type="submit" style={{marginTop: "-4px"}} onClick={() => {alert("Not implemented yet. :(");}}>
+                        <Icon.Search fixedWidth />
+                    </Button>
+                }
+                <NewMediaForm showText={false} imageId={imageId} onUpload={data => onSave(data.results.id)} />
             </div>
         </Panel.Heading>
         <Panel.Body>
@@ -29,4 +31,9 @@ export default ({title, imageId, image, loginToken, onSave, width, height}) =>
                 </Col>
             </Row>
         </Panel.Body>
+        <Panel.Footer>
+            {imageId && image &&
+                <div>{image.fileName}.{image.fileExtension}</div>
+            }
+        </Panel.Footer>
     </Panel>;
