@@ -42,6 +42,7 @@
     "atp-react-tab-router": "^0.3.4",
     "atp-redux-entity": "^0.3.0",
     "atp-sugar": "^0.8.4",
+    "atp-tags": "^0.1.0",
     "atp-ui": "^0.10.1",
     "filesize": "^3.6.0",
     "react": "^16.2.0",

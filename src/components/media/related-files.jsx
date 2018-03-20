@@ -3,10 +3,13 @@ import React from 'react';
 import {Panel, Table} from 'react-bootstrap';
 import {DeleteButton} from 'atp-ui';
 import filesize from 'filesize';
+import {Icon} from 'react-font-awesome-5';
 
 export default ({files}) =>
     <Panel>
-        <Panel.Heading>Related S3 Files</Panel.Heading>
+        <Panel.Heading>
+            <Icon.Image stack /> Related S3 Files
+        </Panel.Heading>
         <Table>
             <thead>
             <tr>

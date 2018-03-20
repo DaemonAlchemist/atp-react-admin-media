@@ -4,6 +4,7 @@ import {Row, Col, Panel} from 'react-bootstrap';
 import RelatedFiles from "../../containers/media/related-files";
 import {DeleteButton} from 'atp-ui';
 import {MediaSelector} from "atp-media";
+import {Tags} from 'atp-tags';
 
 export default ({media, onMediaDelete, updateImage}) =>
     <Row>
@@ -33,6 +34,7 @@ export default ({media, onMediaDelete, updateImage}) =>
                 </Col>
                 <Col xs={12} sm={6}>
                     <RelatedFiles media={media} />
+                    <Tags entityType="mediaFile" entityId={media.id} />
                 </Col>
             </Row>
         </Col>
