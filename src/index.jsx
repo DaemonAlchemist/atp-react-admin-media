@@ -36,6 +36,7 @@ export default {
                     media: {
                         label: <span><Icon.Image /> Media</span>,
                         sortOrder: 0,
+                        permissions: ['media.navMenu.view'],
                         children: {
                             dashboard: {
                                 label: <Link
