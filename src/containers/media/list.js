@@ -2,7 +2,7 @@
 import {Media} from "../../reducer/media";
 import MediaList from "../../components/media/list";
 import {connectWithLifecycle} from 'react-lifecycle-component';
-import {paginator} from 'atp-ui';
+import {paginator} from 'basic-reducers';
 import {get} from 'atp-pointfree';
 
 const pagerId = "mediaListPager";
