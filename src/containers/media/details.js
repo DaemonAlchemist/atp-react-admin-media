@@ -13,6 +13,6 @@ export default connectWithLifecycle(
             dispatch(Media().action.fetch(props.fileId));
         },
         onMediaDelete: () => {dispatch(Media().action.delete(props.fileId));},
-        updateImage: () => {}
+        updateImage: (data, dispatch) => {dispatch(Media().action.update(props.fileId, data));},
     })
 )(FileDetails);
