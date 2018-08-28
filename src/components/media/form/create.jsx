@@ -28,9 +28,9 @@ export default props =>
                 }}/>
             <Button
                 bsStyle="link"
-                bsSize={props.bsSize || "regular"}
+                bsSize={props.bsSize || null}
                 onClick={() => {}}
-                enabled={!props.isUploading}
+                disabled={props.isUploading}
                 style={{marginTop: "-4px"}}
             >
                 {props.isUploading

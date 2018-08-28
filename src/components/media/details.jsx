@@ -12,9 +12,9 @@ import {Icon} from 'react-font-awesome-5';
 const CanEdit = props => <HasPermission yes permissions={["media.file.update"]} {...props} />;
 const CantEdit = props => <HasPermission no permissions={["media.file.update"]} {...props} />;
 
-export default ({media, onMediaDelete, updateImage}) =>
+export default ({media, onMediaDelete, updateImage}) => media ?
     <Row>
-        <Col xs={12} md={10} mdOffset={1} lg={8} lgOffset={2} xl={6} xlOffset={3}>
+        <Col xs={12} md={10} mdOffset={1} lg={8} lgOffset={2}>
             <Row>
                 <Col xs={12}>
                     <CanEdit>
@@ -81,4 +81,4 @@ export default ({media, onMediaDelete, updateImage}) =>
                 </Col>
             </Row>
         </Col>
-    </Row>;
+    </Row> : <div><Icon.Spinner spin /> Loading...</div>;

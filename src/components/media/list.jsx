@@ -26,7 +26,7 @@ export default ({pagerId, onUpload, media, onMediaDelete, onNameFilterChange, on
                 <Panel.Heading><Icon.Search /> Filter by tags:</Panel.Heading>
                 <Panel.Body>
                     {[...tagFilter.values()].map(tag =>
-                        <Badge>{tag}  <Icon.Times onClick={onRemoveTag(tag)}/></Badge>
+                        <Badge key={tag}>{tag}  <Icon.Times onClick={onRemoveTag(tag)}/></Badge>
                     )}
                     <TagSelector id="mediaListTagFilter" onAdd={onAddTag} noCreate>
                         <Icon.Plus /> Add tags
