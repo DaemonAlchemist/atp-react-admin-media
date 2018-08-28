@@ -45,7 +45,7 @@
     "atp-sugar": "^0.9.1",
     "atp-tags": "^0.3.2",
     "atp-uac": "^0.8.8",
-    "atp-ui": "^0.14.1",
+    "atp-ui": "^0.14.2",
     "basic-reducers": "^0.2.1",
     "filesize": "^3.6.1",
     "react": "^16.4.2",
