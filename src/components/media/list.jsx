@@ -13,13 +13,19 @@ import {TagSelector} from "atp-tags";
 
 const ResponsiveEllipsis = responsiveHOC()(LinesEllipsis);
 
-export default ({pagerId, onUpload, media, onMediaDelete, onNameFilterChange, onAddTag, onRemoveTag, tagFilter}) =>
+export default ({pagerId, onUpload, media, onMediaDelete, onNameFilterChange, onTitleFilterChange, onAddTag, onRemoveTag, tagFilter}) =>
     <Row>
         <Col xs={12} sm={2}>
             <Panel>
                 <Panel.Heading><Icon.Search /> Filter by file name:</Panel.Heading>
                 <Panel.Body>
                     <input className="form-control" onChange={onNameFilterChange}/>
+                </Panel.Body>
+            </Panel>
+            <Panel>
+                <Panel.Heading><Icon.Search /> Filter by title:</Panel.Heading>
+                <Panel.Body>
+                    <input className="form-control" onChange={onTitleFilterChange}/>
                 </Panel.Body>
             </Panel>
             <Panel>
@@ -70,6 +76,9 @@ export default ({pagerId, onUpload, media, onMediaDelete, onNameFilterChange, on
                                         <MediaLink media={item}>
                                             <Image imageId={item.id} width={300} height={300} />
                                         </MediaLink>
+                                        <Panel.Footer>
+                                            {item.title || <em>No title</em>}
+                                        </Panel.Footer>
                                     </Panel>
                                 </Col>
                             )}

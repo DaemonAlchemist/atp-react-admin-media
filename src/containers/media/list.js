@@ -10,6 +10,7 @@ const pagerId = "mediaListPager";
 const perPage = 10;
 const filterId = "mediaListMainFilter";
 const fileNameFilterId = filterId + "FileName";
+const titleFilterId = filterId + "Title";
 const tagFilterId = filterId + "Tag";
 
 const fetchMedia = (dispatch, props, filters = {}) => {
@@ -27,11 +28,13 @@ export default connectWithLifecycle(
         pagerId,
         offset: (paginator.get(get(state), pagerId).page - 1) * perPage,
         fileNameFilter: input.value(get(state), fileNameFilterId),
+        titleFilter: input.value(get(state), titleFilterId),
         tagFilter: set.values(get(state), tagFilterId),
         perPage,
         media: Media().select.byList(() => state, {
             offset: (paginator.get(get(state), pagerId).page - 1) * perPage,
             fileName: input.value(get(state), fileNameFilterId),
+            title: input.value(get(state), titleFilterId),
             tag: [...set.values(get(state), tagFilterId).values()],
             perPage
         }),
@@ -42,6 +45,7 @@ export default connectWithLifecycle(
             dispatch(Media().action.collection.get({
                 offset: 0,
                 fileName: null,
+                title: null,
                 tag: [],
                 perPage
             }, data => {
@@ -52,13 +56,13 @@ export default connectWithLifecycle(
             if(
                 newProps.offset !== this.props.offset ||
                 newProps.fileNameFilter !== this.props.fileNameFilter ||
+                newProps.titleFilter !== this.props.titleFilter ||
                 newProps.tagFilter !== this.props.tagFilter
             ) {
-                console.log("Recieve props");
-                console.log(newProps);
                 dispatch(Media().action.collection.get({
                     offset: newProps.offset,
                     fileName: newProps.fileNameFilter,
+                    title: newProps.titleFilter,
                     tag: [...newProps.tagFilter.values()],
                     perPage
                 }, data => {
@@ -68,6 +72,9 @@ export default connectWithLifecycle(
         },
         onNameFilterChange: e => {
             dispatch(input.set(fileNameFilterId, e.target.value));
+        },
+        onTitleFilterChange: e => {
+            dispatch(input.set(titleFilterId, e.target.value));
         },
         onAddTag: tag => {
             console.log("Adding tag: " + tag);
